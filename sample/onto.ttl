@@ -21,12 +21,4 @@ dbo:Subject a rdfs:Class ;
 
 # properties ( -> GraphQL fields )
 
-rdfs:label a rdf:Property, owl:FunctionalProperty ;
-  rdfs:comment "Name of the entity" ;
-  schema:domainIncludes owl:Thing ;
-  schema:rangeIncludes xsd:string .
-
-dbo:Reduce a rdf:Property ;
-  rdfs:comment "property Reduce" ;
-  schema:domainIncludes dbo:Subject ;
-  schema:rangeIncludes dbo:Subject .
+rdfs:label a rdf:Property, owl:FunctionalProperty ;rdfs:comment "Name of the entity" ; schema:domainIncludes owl:Thing ; schema:rangeIncludes xsd:string .

@@ -180,18 +180,16 @@ function getRelated(parent) {
     nodes.update({ id: parent, size: 40, expanded: true });
 
     document.getElementById("statement").innerHTML = retrievalText;
-    console.log(parent);
+    console.log(parent)
     var client = new HttpClient();
-    fetch(
-      "https://research-wiki-backend.herokuapp.com/api/v1/query?label=query1"
-    )
+    fetch("https://research-wiki-backend.herokuapp.com/api/v1/query?label=query1")
       .then((res) => res.json())
       .then((data) => data[0])
       .then((body) => {
         console.log(body);
         client.post(
           apiUri + "/graphql",
-          JSON.stringify({ query: body }),
+          JSON.stringify({query: body}),
           function (response) {
             visualise(null, null, response.data.Subject[0]);
             instruction();
@@ -271,6 +269,8 @@ function draw() {
       }
     }
   });
+
+  
 
   $(document).ready(function () {
     $("#names_box").on("select2:select", function (e) {

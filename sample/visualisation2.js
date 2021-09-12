@@ -1,5 +1,5 @@
-query1 =(parent)=>'{ Subject(filter: { _id:"' + parent + '"}) { _id Reduce { _id _type label } } { _id Deduce { _id _type label } } { _id Increase { _id _type label } } }'
-query2 = (topic) => '{ _CONTEXT { _id _type Subject label } Subject(filter:{_id: ["' + topic.map(function (item) { return '"' + item + '"'; }) +']}) { _id _type label Reduce { _id }} { _id _type label Deduce { _id }} { _id _type label Increase { _id }} }'
+query1 =(parent)=>'{ Subject(filter: { _id:"' + parent + '"}){ _id Reduce { _id _type label } Deduce { _id _type label } Increase { _id _type label } }'
+query2 = (topic) => '{ _CONTEXT { _id _type Subject label } Subject(filter:{_id: ["' + topic.map(function (item) { return '"' + item + '"' }) +']}){ _id _type label Reduce { _id } Deduce { _id } Increase { _id } }}'
 var apiUri = "";
 
 var nodes, edges, network;
